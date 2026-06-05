@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeFlow Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <button id="themeToggle" class="theme-toggle">
+        🌙
+    </button>
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <section class="card header-card">
+
+            <h1 id="greeting">Good Morning</h1>
+
+            <p class="subtitle">
+                Plan your day and stay productive 🚀
+            </p>
+
+            <div id="clock" class="clock">
+                00:00:00
+            </div>
+
+            <div id="date" class="date">
+                Monday, January 1, 2026
+            </div>
+
+            <div class="name-box">
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your name">
+
+                <button onclick="saveName()">
+                    Save
+                </button>
+            </div>
+
+        </section>
+
+        <!-- TASK + TIMER -->
+
+        <div class="dashboard-grid">
+
+            <!-- TASKS -->
+
+            <section class="card">
+
+                <div class="section-header">
+                    <h2>Today's Tasks</h2>
+                </div>
+
+                <div class="task-input">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Add a task...">
+
+                    <button onclick="addTask()">
+                        Add
+                    </button>
+
+                </div>
+
+                <select id="sortSelect" onchange="sortTasks()">
+
+                    <option value="pending">
+                        Pending First
+                    </option>
+
+                    <option value="completed">
+                        Completed First
+                    </option>
+
+                    <option value="az">
+                        A - Z
+                    </option>
+
+                    <option value="za">
+                        Z - A
+                    </option>
+
+                </select>
+
+                <ul id="taskList"></ul>
+
+            </section>
+
+            <!-- TIMER -->
+
+            <section class="card timer-card">
+
+                <h2>Focus Timer</h2>
+
+                <div id="timer">
+                    25:00
+                </div>
+
+                <div class="timer-buttons">
+
+                    <button onclick="startTimer()">
+                        Start
+                    </button>
+
+                    <button onclick="stopTimer()">
+                        Stop
+                    </button>
+
+                    <button onclick="resetTimer()">
+                        Reset
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+
+        <section class="card">
+
+            <h2>Quick Links</h2>
+
+            <div class="link-input">
+
+                <input
+                    type="text"
+                    id="linkName"
+                    placeholder="Link Name">
+
+                <input
+                    type="text"
+                    id="linkUrl"
+                    placeholder="https://">
+
+                <button onclick="addLink()">
+                    Add Link
+                </button>
+
+            </div>
+
+            <div id="linksContainer"></div>
+
+        </section>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
